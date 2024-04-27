@@ -1,7 +1,7 @@
 {
   "name": "touchbarcommands",
   "displayName": "Touchbar Commands",
-  "publisher": "LordImmaculate",
+  "publisher": "emild",
   "description": "Useful commands for the touch bar",
   "icon": "images/icon.png",
   "repository": {
