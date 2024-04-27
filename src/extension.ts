@@ -2,19 +2,21 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
+const config = vscode.workspace.getConfiguration('touchBarCommands');
+
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
-	const verify = vscode.commands.registerCommand('extension.verify', () => {
-		vscode.commands.executeCommand('arduino.verify');
+	/*const test = vscode.commands.registerCommand('extension.test', () => {
+		const showUploadIcon = config.get<boolean>('uploadIcon.enabled');
+		if (showUploadIcon) {
+		vscode.window.showInformationMessage("showUploadIcon is true");
+		}
+		else {
+			vscode.window.showInformationMessage("showUploadIcon is false");
+		}
 	});
-	const upload = vscode.commands.registerCommand('extension.upload', () => {
-		vscode.commands.executeCommand('arduino.upload');
-	});
-	const format = vscode.commands.registerCommand('extension.format', () => {
-		vscode.commands.executeCommand('editor.action.formatDocument');
-	});
-	context.subscriptions.push(verify, upload, format);
+	context.subscriptions.push(test);*/
 }
 // This method is called when your extension is deactivated
 export function deactivate() { }

@@ -4,8 +4,9 @@
   "description": "Useful commands for the touch bar",
   "repository": {
     "type": "git",
-    "url": "https://github.com/LordImmaculate/touchbarcommands"},
-  "version": "0.0.1",
+    "url": "https://github.com/LordImmaculate/touchbarcommands"
+  },
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.88.0"
   },
@@ -17,17 +18,17 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.format",
+        "command": "editor.action.formatDocument",
         "title": "Format",
         "icon": "./images/format.png"
       },
       {
-        "command": "extension.verify",
+        "command": "arduino.verify",
         "title": "Arduino: Verify",
         "icon": "./images/verify.png"
       },
       {
-        "command": "extension.upload",
+        "command": "arduino.upload",
         "title": "Arduino: Upload",
         "icon": "./images/upload.png"
       }
@@ -35,20 +36,44 @@
     "menus": {
       "touchBar": [
         {
-          "command": "extension.format",
-          "group": "0editing"
+          "command": "editor.action.formatDocument",
+          "group": "0editing",
+          "when": "config.touchbarcommands.formatIcon.enabled == true"
         },
         {
-          "command": "extension.verify",
+          "command": "arduino.verify",
           "group": "1arduino",
-          "when": "resourceExtname == '.ino'"
+          "when": "config.touchbarcommands.uploadIcon.enabled == true && resourceExtname == '.ino'"
         },
         {
-          "command": "extension.upload",
+          "command": "arduino.upload",
           "group": "1arduino",
-          "when": "resourceExtname == '.ino'"
+          "when": "config.touchbarcommands.uploadIcon.enabled == true && resourceExtname == '.ino'"
         }
       ]
+    },
+    "configuration": {
+      "title": "Touch Bar Commands",
+      "properties": {
+        "touchbarcommands.formatIcon.enabled": {
+          "type": "boolean",
+          "scope": "window",
+          "default": true,
+          "description": "Show Format icon in touch bar"
+        },
+        "touchbarcommands.uploadIcon.enabled": {
+          "type": "boolean",
+          "scope": "window",
+          "default": true,
+          "description": "Show Upload icon in touch bar"
+        },
+        "touchbarcommands.verifyIcon.enabled": {
+          "type": "boolean",
+          "scope": "window",
+          "default": true,
+          "description": "Show Verify icon in touch bar"
+        }
+      }
     }
   },
   "scripts": {
