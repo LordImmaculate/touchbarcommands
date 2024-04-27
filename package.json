@@ -1,7 +1,7 @@
 {
   "name": "touchbarcommands",
   "displayName": "touchbarcommands",
-  "description": "Custom touch bar commands!",
+  "description": "Useful commands for the touch bar",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.88.0"
@@ -14,10 +14,39 @@
   "contributes": {
     "commands": [
       {
-        "command": "touchbarcommands.helloWorld",
-        "title": "Hello World"
+        "command": "extension.format",
+        "title": "Format",
+        "icon": "./images/format.png"
+      },
+      {
+        "command": "extension.verify",
+        "title": "Arduino: Verify",
+        "icon": "./images/verify.png"
+      },
+      {
+        "command": "extension.upload",
+        "title": "Arduino: Upload",
+        "icon": "./images/upload.png"
       }
-    ]
+    ],
+    "menus": {
+      "touchBar": [
+        {
+          "command": "extension.format",
+          "group": "0editing"
+        },
+        {
+          "command": "extension.verify",
+          "group": "1arduino",
+          "when": "resourceExtname == '.ino'"
+        },
+        {
+          "command": "extension.upload",
+          "group": "1arduino",
+          "when": "resourceExtname == '.ino'"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
