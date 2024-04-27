@@ -2,6 +2,7 @@
   "name": "touchbarcommands",
   "displayName": "touchbarcommands",
   "description": "Useful commands for the touch bar",
+  "icon": "images/icon.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/LordImmaculate/touchbarcommands"
