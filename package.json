@@ -2,6 +2,9 @@
   "name": "touchbarcommands",
   "displayName": "touchbarcommands",
   "description": "Useful commands for the touch bar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LordImmaculate/touchbarcommands"},
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.88.0"
